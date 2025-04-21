@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
-import Con from '../assets/contactus.png'
+import Con from '../assets/mess.gif'
 const Contact = () => {
   return (
     <div className='b-2 m'>
       <Container className='mt-5 mb-5 '>
-      <Form className='border border-secondary rounded p-4 shadow-sm'>
+      <Form className='border border-warning rounded p-4 shadow-sm'>
       <Row>
           <Col md={7}>
             <img src={Con} alt='contact' height={500} width={500} />
@@ -27,7 +27,7 @@ const Contact = () => {
                 <Form.Control as='textarea' rows={6} placeholder='Type your message here'></Form.Control>
               </Form.Group>
             </Row>
-           <Button type='submit' variant='success' className='my-4'>SEND</Button>
+           <Button type='submit' variant='primary' className='my-4'>SEND</Button>
           </Col>
         </Row>
       </Form>
