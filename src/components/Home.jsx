@@ -1,16 +1,16 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+// import Nav from 'react-bootstrap/Nav';
+// import Navbar from 'react-bootstrap/Navbar';
 import '../components/home.css';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { FaShoppingCart } from 'react-icons/fa';
-import Card from 'react-bootstrap/Card';
-import { FaSearch } from 'react-icons/fa';
-import InputGroup from 'react-bootstrap/InputGroup';
+// import Form from 'react-bootstrap/Form';
+// import Button from 'react-bootstrap/Button';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+// import { FaShoppingCart } from 'react-icons/fa';
+// import Card from 'react-bootstrap/Card';
+// import { FaSearch } from 'react-icons/fa';
+// import InputGroup from 'react-bootstrap/InputGroup';
 import Carousel from 'react-bootstrap/Carousel';
 import Speaker from '../assets/speaker.png';
 import TV from '../assets/smart.png';
@@ -19,7 +19,7 @@ import play from '../assets/play.png';
 const Home = () => {
   return (
     <div className='mt-5'>
-      <Carousel data-bs-theme='dark'>
+      <Carousel data-bs-theme='dark' >
         <Carousel.Item>
           <img className='d-block mx-auto' src={Speaker} alt='speaker' style={{width:'50%',height:'50%'}}/>
           <Carousel.Caption>

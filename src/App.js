@@ -12,6 +12,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Products from './components/Products';
 import About from './components/About';
 import Contact from './components/Contact';
+import ProductList from './components/ProductList';
 function App() {
   return (
     <div className="App">
@@ -46,6 +47,7 @@ function App() {
         <Route path='/products' element={<Products/>}></Route>
         <Route path='/about' element={<About/>}></Route>
         <Route path='/contact' element={<Contact/>}></Route>
+        <Route path='/productlist' element={<ProductList price={1500} shippingCharge={120}/>}></Route>
       </Routes>
       
       </BrowserRouter>

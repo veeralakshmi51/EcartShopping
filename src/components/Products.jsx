@@ -8,7 +8,13 @@ import watch from '../assets/watch.png'
 import smarttv from '../assets/smart.png';
 import speaker from '../assets/speaker.png';
 import play from '../assets/play.png';
+import { useNavigate } from 'react-router-dom'
 const Products = () => {
+    const navigate = useNavigate();
+    const handleChange = () => {
+        console.log('watch selected');
+        navigate('/productlist')
+    }
     return (
         <>
             <Container className='my-5'>
@@ -21,7 +27,7 @@ const Products = () => {
                                 <Card.Text>
                                     A smart watch is a wearable gadget that connects to your phone to show notifications, track fitness, and more — all from your wrist.
                                 </Card.Text>
-                                <Button variant="secondary">Add to cart</Button>
+                                <Button variant="secondary" onClick={handleChange}>Add to cart</Button>
                             </Card.Body>
                         </Card>
                     </Col>
