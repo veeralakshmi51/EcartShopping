@@ -8,7 +8,13 @@ import watch from '../assets/watch.png'
 import smarttv from '../assets/smart.png';
 import speaker from '../assets/speaker.png';
 import play from '../assets/play.png';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { Nav } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
+import { InputGroup } from 'react-bootstrap';
+import { FaSearch } from 'react-icons/fa';
+import { FaShoppingCart } from 'react-icons/fa';
 const Products = () => {
     const navigate = useNavigate();
     const handleChange = () => {
@@ -17,6 +23,30 @@ const Products = () => {
     }
     return (
         <>
+            <Navbar bg="secondary" data-bs-theme="light" className='py-2 px-2'>
+                <Container>
+                    <Navbar.Brand href="/" className='fs-3 py-2'><FaShoppingCart className="me-2" />Ecart Shopping</Navbar.Brand>
+                    <Nav className="me-auto fs-5">
+                        <Nav.Link href="/" >Home</Nav.Link>
+                        <Nav.Link href="/products">Products</Nav.Link>
+                        <Nav.Link href="/about">About</Nav.Link>
+                        <Nav.Link href='/contact'>Contact Us</Nav.Link>
+                    </Nav>
+                    <Form>
+                        <InputGroup>
+                            <InputGroup.Text>
+                                <FaSearch />
+                            </InputGroup.Text>
+                            <Form.Control
+                                type="text"
+                                placeholder="Search here..."
+                            />
+                            <Button type="submit" variant="info">Search</Button>
+                        </InputGroup>
+                    </Form>
+
+                </Container>
+            </Navbar>
             <Container className='my-5'>
                 <Row className="g-4">
                     <Col md={3}>

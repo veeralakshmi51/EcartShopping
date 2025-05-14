@@ -1,24 +1,64 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container';
-// import Nav from 'react-bootstrap/Nav';
-// import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import '../components/home.css';
-// import Form from 'react-bootstrap/Form';
-// import Button from 'react-bootstrap/Button';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
-// import { FaShoppingCart } from 'react-icons/fa';
-// import Card from 'react-bootstrap/Card';
-// import { FaSearch } from 'react-icons/fa';
-// import InputGroup from 'react-bootstrap/InputGroup';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { FaShoppingCart, FaSignOutAlt } from 'react-icons/fa';
+import Card from 'react-bootstrap/Card';
+import { FaSearch } from 'react-icons/fa';
+import InputGroup from 'react-bootstrap/InputGroup';
 import Carousel from 'react-bootstrap/Carousel';
 import Speaker from '../assets/speaker.png';
 import TV from '../assets/smart.png';
 import Watch from '../assets/watch.png';
 import play from '../assets/play.png';
+import { FiLogOut } from "react-icons/fi";
+import { getAuth, signOut } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 const Home = () => {
+  const navigate=useNavigate();
+  const handleLogout=()=>{
+    const auth = getAuth();
+signOut(auth).then(() => {
+  console.log("success");
+  navigate('/login');
+  
+}).catch((error) => {
+  console.log("error",error);
+  
+});
+
+  }
   return (
-    <div className='mt-5'>
+    <div>
+        <Navbar bg="secondary" data-bs-theme="light" className='py-2 px-2'>
+        <Container>
+          <Navbar.Brand href="/" className='fs-3 py-2'><FaShoppingCart className="me-2" />Ecart Shopping</Navbar.Brand>
+          <Nav className="me-auto fs-5">
+            <Nav.Link href="/home" >Home</Nav.Link>
+            <Nav.Link href="/products">Products</Nav.Link>
+            <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href='/contact'>Contact Us</Nav.Link>
+          </Nav>
+          <Form>
+            <InputGroup>
+              <InputGroup.Text>
+                <FaSearch />
+              </InputGroup.Text>
+              <Form.Control
+                type="text"
+                placeholder="Search here..."
+              />
+              <Button type="submit" variant="info">Search</Button>
+            </InputGroup>
+          </Form>
+        </Container>
+        <FiLogOut size={'40'} className='me-4' style={{cursor:'pointer'}} onClick={handleLogout}/>
+      </Navbar>
       <Carousel data-bs-theme='dark' >
         <Carousel.Item>
           <img className='d-block mx-auto' src={Speaker} alt='speaker' style={{width:'50%',height:'50%'}}/>
